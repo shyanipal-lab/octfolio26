@@ -6,7 +6,7 @@ import {defineConfig, loadEnv} from 'vite';
 export default defineConfig(({mode}) => {
   const env = loadEnv(mode, '.', '');
   return {
-    base: process.env.BASE_PATH || '/',
+    base: process.env.BASE_PATH || (mode === 'production' ? '/octfolio26/' : '/'),
     plugins: [
       react(),
       tailwindcss(),

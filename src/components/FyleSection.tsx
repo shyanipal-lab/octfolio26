@@ -45,17 +45,17 @@ export default function FyleSection() {
             </div>
 
             {/* Main Quote / Headline */}
-            <h2 className="text-gray-900 dark:text-white text-2xl sm:text-3xl md:text-4xl lg:text-4.5xl font-bold leading-tight tracking-tight font-sans max-w-3xl mx-auto">
+            <h2 className="text-gray-900 dark:text-white text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-bold leading-[1.22] tracking-tight font-sans max-w-3xl mx-auto">
               <span className="block">
                 “I’ve genuinely considered not claiming expenses anymore. The form takes longer than the commute itself.”
               </span>
-              <span className="block mt-3 text-xs sm:text-sm font-sans font-medium text-zinc-500 tracking-normal normal-case not-italic">
-                — says the user
+              <span className="block mt-3 text-xs sm:text-sm font-medium text-zinc-500 tracking-normal normal-case not-italic">
+                — Direct quote from user research with 500+ daily commuters
               </span>
             </h2>
 
             {/* Subtitle */}
-            <p className="text-zinc-600 dark:text-zinc-400 mt-4 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
+            <p className="text-zinc-600 dark:text-zinc-400 mt-4 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed font-normal">
               Fyle is a B2B expense management platform. 500+ daily commuters were filing mileage one painful entry at a time. I redesigned bulk mileage and expense approvals from the ground up — cutting complaints by 60% in 6 weeks.
             </p>
 
@@ -66,10 +66,10 @@ export default function FyleSection() {
                 href="https://spfolio.framer.ai/zz-case-study-bulk-mileage"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-zinc-900 text-white text-xs sm:text-sm font-semibold shadow-md shadow-zinc-900/10 hover:bg-zinc-800 transition-all group"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-zinc-900 text-white text-xs sm:text-sm font-semibold shadow-md shadow-zinc-900/10 hover:bg-zinc-800 hover:shadow-lg transition-[transform,background-color,box-shadow] duration-150 ease-out active:scale-[0.97] group cursor-pointer"
               >
-                <span>Case study</span>
-                <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                <span>Read case study</span>
+                <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-150" />
               </a>
             </div>
           </div>
@@ -94,7 +94,7 @@ export default function FyleSection() {
                 <button
                   type="button"
                   onClick={() => setActiveTab("mileage")}
-                  className={`flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[11px] font-semibold transition-all ${
+                  className={`flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[11px] font-semibold transition-[transform,background-color,color,box-shadow] duration-150 ease-out active:scale-[0.96] ${
                     activeTab === "mileage"
                       ? "bg-white text-zinc-900 shadow-xs"
                       : "text-zinc-500 hover:text-zinc-900"
@@ -106,7 +106,7 @@ export default function FyleSection() {
                 <button
                   type="button"
                   onClick={() => setActiveTab("webapp")}
-                  className={`flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[11px] font-semibold transition-all ${
+                  className={`flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[11px] font-semibold transition-[transform,background-color,color,box-shadow] duration-150 ease-out active:scale-[0.96] ${
                     activeTab === "webapp"
                       ? "bg-white text-zinc-900 shadow-xs"
                       : "text-zinc-500 hover:text-zinc-900"

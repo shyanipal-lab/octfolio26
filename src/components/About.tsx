@@ -392,10 +392,10 @@ export default function About() {
         <div className="mt-12 sm:mt-16 flex justify-center">
           <Link 
             to="/about"
-            className="inline-flex items-center gap-3 bg-zinc-900 text-white px-8 py-3.5 rounded-full font-bold uppercase tracking-widest text-xs hover:bg-brand-primary hover:text-black transition-all shadow-md hover:shadow-lg active:translate-y-px"
+            className="inline-flex items-center gap-3 bg-zinc-900 text-white px-8 py-3.5 rounded-full font-bold uppercase tracking-widest text-xs hover:bg-brand-primary hover:text-black transition-[transform,background-color,color,box-shadow] duration-150 ease-out shadow-md hover:shadow-lg active:scale-[0.97] cursor-pointer group"
           >
             <span>Full Story & Journey</span>
-            <Sparkles className="w-4 h-4 text-brand-primary group-hover:rotate-12 transition-transform" />
+            <Sparkles className="w-4 h-4 text-brand-primary group-hover:rotate-12 transition-transform duration-200" />
           </Link>
         </div>
       </div>
@@ -403,18 +403,26 @@ export default function About() {
       {/* Image Lightbox Modal */}
       <AnimatePresence>
         {selectedImage && (
-          <div 
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2, ease: [0.23, 1, 0.32, 1] }}
             onClick={() => setSelectedImage(null)}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-md p-4 animate-in fade-in duration-200"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-md p-4"
           >
-            <div 
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.96 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.96 }}
+              transition={{ duration: 0.2, ease: [0.23, 1, 0.32, 1] }}
               onClick={(e) => e.stopPropagation()}
-              className="relative max-w-2xl w-full max-h-[90vh] bg-zinc-950 rounded-2xl overflow-hidden border border-zinc-800 shadow-2xl flex flex-col"
+              className="relative max-w-2xl w-full max-h-[90vh] bg-zinc-950 rounded-2xl overflow-hidden border border-zinc-800 shadow-2xl flex flex-col origin-center"
             >
               <button
                 type="button"
                 onClick={() => setSelectedImage(null)}
-                className="absolute top-3 right-3 z-30 p-2 rounded-full bg-black/60 text-white hover:bg-black/80 transition-colors"
+                className="absolute top-3 right-3 z-30 p-2 rounded-full bg-black/60 text-white hover:bg-black/80 active:scale-[0.92] transition-[transform,background-color] duration-150 ease-out"
               >
                 <X className="w-5 h-5" />
               </button>
@@ -431,26 +439,34 @@ export default function About() {
                   Senior Product Designer • Mercedes-Benz R&D • Ex-Fyle
                 </p>
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         )}
       </AnimatePresence>
 
       {/* Video Modal */}
       <AnimatePresence>
         {selectedVideo && (
-          <div 
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2, ease: [0.23, 1, 0.32, 1] }}
             onClick={() => setSelectedVideo(null)}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 backdrop-blur-md p-4 animate-in fade-in duration-200"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 backdrop-blur-md p-4"
           >
-            <div 
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.96 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.96 }}
+              transition={{ duration: 0.2, ease: [0.23, 1, 0.32, 1] }}
               onClick={(e) => e.stopPropagation()}
-              className="relative max-w-3xl w-full bg-black rounded-2xl overflow-hidden border border-zinc-800 shadow-2xl flex flex-col"
+              className="relative max-w-3xl w-full bg-black rounded-2xl overflow-hidden border border-zinc-800 shadow-2xl flex flex-col origin-center"
             >
               <button
                 type="button"
                 onClick={() => setSelectedVideo(null)}
-                className="absolute top-3 right-3 z-30 p-2 rounded-full bg-black/60 text-white hover:bg-black/80 transition-colors"
+                className="absolute top-3 right-3 z-30 p-2 rounded-full bg-black/60 text-white hover:bg-black/80 active:scale-[0.92] transition-[transform,background-color] duration-150 ease-out"
               >
                 <X className="w-5 h-5" />
               </button>
@@ -461,8 +477,8 @@ export default function About() {
                 playsInline
                 className="w-full max-h-[75vh] object-contain bg-black"
               />
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         )}
       </AnimatePresence>
     </section>

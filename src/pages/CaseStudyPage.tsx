@@ -33,6 +33,7 @@ import FyleWebApp from "../components/FyleWebApp";
 import FyleReimbursementApp from "../components/FyleReimbursementApp";
 import FyleCampaignHero from "../components/FyleCampaignHero";
 import MercedesApp from "../components/MercedesApp";
+import MercedesClarityContent from "../components/MercedesClarityContent";
 import EditableImage from "../components/EditableImage";
 import { CinematicHero } from "../components/ui/cinematic-hero";
 
@@ -1402,131 +1403,35 @@ const CASE_STUDIES: Record<string, CaseStudy> = {
     )
   },
   mercedes: {
-    title: "Mercedes Benz",
-    subtitle: "Internal Tooling & OS",
-    category: "Enterprise · Internal Tool · Design System",
-    duration: "6 Months",
-    year: "2025",
+    title: "Making UID creation self-serve for MBUX spec teams",
+    subtitle: "Mercedes-Benz R&D · Shyani Pal, UX Designer",
+    category: "Internal Tooling · Figma Meta Plugin & CDDB3 Dashboard",
+    duration: "5 Months",
+    year: "Shipped",
     heroComponent: (
-      <div className="w-full h-full bg-zinc-50 flex items-center justify-center p-8 overflow-hidden">
-        <div className="w-full max-w-5xl aspect-video bg-white rounded-[48px] shadow-2xl border border-zinc-100 overflow-hidden relative">
+      <div className="w-full h-full bg-zinc-950 flex items-center justify-center p-3 sm:p-6 overflow-hidden">
+        <div className="w-full max-w-6xl aspect-video bg-zinc-900 rounded-2xl sm:rounded-3xl shadow-2xl border border-zinc-800 overflow-hidden relative">
           <MercedesApp />
         </div>
       </div>
     ),
-    keyInsight: "Complex data systems need emotional clarity to reduce cognitive load.",
+    keyInsight: "“Design should welcome people into the design process — not lock them out of it.”",
     sections: [
-      { id: "story", label: "The Story" },
-      { id: "impact", label: "Impact" },
+      { id: "project-card", label: "Project Card" },
+      { id: "executive-summary", label: "Summary" },
+      { id: "context-stakes", label: "Context & Stakes" },
+      { id: "role-constraints", label: "Role & Constraints" },
+      { id: "what-we-learned", label: "What We Learned" },
+      { id: "decisions-tradeoffs", label: "Decisions & Tradeoffs" },
+      { id: "workflow", label: "The Workflow" },
+      { id: "visual-plan", label: "Visual Artifacts" },
+      { id: "prototype", label: "Interactive Prototype" },
+      { id: "validation", label: "Validation" },
+      { id: "outcomes", label: "Outcomes" },
+      { id: "reflection", label: "Reflection" },
+      { id: "evidence-notes", label: "Evidence & Attribution" },
     ],
-    content: (
-      <div className="space-y-24 font-sans">
-        {/* Comic Book Intro */}
-        <section id="story" className="scroll-mt-32">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-4 auto-rows-min">
-            
-            {/* Panel 1: The Crisis */}
-            <div className="lg:col-span-7 border-[6px] border-zinc-900 bg-white p-8 relative overflow-hidden shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] transform -rotate-1">
-              <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #000 1px, transparent 1px)', backgroundSize: '6px 6px' }}></div>
-              <div className="absolute top-0 left-0 bg-zinc-900 text-white px-4 py-1 font-black uppercase tracking-widest text-[10px] z-10">The Crisis</div>
-              <div className="mt-4">
-                <h4 className="text-4xl font-black uppercase tracking-tighter mb-4 leading-none">Data Overload!</h4>
-                <p className="text-lg font-bold text-zinc-600 leading-tight mb-6">
-                  Engineers were navigating 150+ languages and thousands of unique IDs across multiple legacy systems. Handover was a nightmare.
-                </p>
-                <div className="flex gap-4">
-                  <div className="w-12 h-12 rounded-full bg-red-100 flex items-center justify-center text-2xl">🤯</div>
-                  <div className="bg-zinc-100 p-4 rounded-2xl rounded-tl-none border-2 border-zinc-900 relative">
-                    <p className="text-sm font-bold italic">"I spend more time finding IDs than writing code!"</p>
-                    <div className="absolute -left-2 top-0 w-4 h-4 bg-zinc-100 border-l-2 border-t-2 border-zinc-900 transform -rotate-45"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Panel 2: The Insight */}
-            <div className="lg:col-span-5 border-[6px] border-zinc-900 bg-brand-primary p-8 relative shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] transform rotate-1">
-              <div className="absolute top-0 left-0 bg-zinc-900 text-white px-4 py-1 font-black uppercase tracking-widest text-[10px]">The Insight</div>
-              <div className="flex flex-col h-full justify-center text-white">
-                <div className="text-6xl font-black mb-2 leading-none">SYSTEMIC CLARITY</div>
-                <p className="text-xl font-bold leading-none uppercase tracking-tighter mt-2">
-                  Design for the Handover.
-                </p>
-                <div className="mt-6 p-4 bg-white/20 rounded-xl backdrop-blur-sm border border-white/30">
-                  <p className="text-sm font-medium">A spec isn't a picture, it's a <span className="underline decoration-4">CONVERSATION</span>.</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Panel 3: The Hero Moment */}
-            <div className="lg:col-span-12 border-[6px] border-zinc-900 bg-zinc-50 p-12 relative shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] mt-8 overflow-hidden">
-              <div className="absolute inset-0 opacity-[0.02] pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #000 1px, transparent 1px)', backgroundSize: '8px 8px' }}></div>
-              <div className="absolute top-0 left-0 bg-zinc-900 text-white px-4 py-1 font-black uppercase tracking-widest text-[10px] z-10">The Solution</div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative z-10">
-                <div>
-                  <div className="inline-block bg-yellow-400 text-zinc-900 px-6 py-2 font-black text-3xl uppercase tracking-tighter mb-6 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] -rotate-2">
-                    SPEC-MAPPING!
-                  </div>
-                  <h4 className="text-3xl font-black uppercase tracking-tighter mb-4 leading-none">Bridging the Gap.</h4>
-                  <p className="text-zinc-600 font-bold leading-relaxed">
-                    We built a unified canvas that maps unique IDs directly to design specs, automates 150 language transitions, and tracks bugs in real-time.
-                  </p>
-                </div>
-                <div className="relative">
-                  <div className="absolute -top-10 -left-10 w-32 h-32 bg-yellow-400 rounded-full flex items-center justify-center border-4 border-zinc-900 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] z-20 animate-bounce">
-                    <span className="font-black text-2xl uppercase tracking-tighter -rotate-12 text-zinc-900 text-center">EASY HANDOVER!</span>
-                  </div>
-                  <div className="relative w-full aspect-video bg-white rounded-[40px] shadow-2xl border border-zinc-100 overflow-hidden">
-                    <MercedesApp />
-                  </div>
-                  <div className="absolute -bottom-4 -right-4 bg-brand-primary text-white p-4 font-black text-xl uppercase tracking-tighter shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rotate-3">
-                    OS READY!
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Panel 4: The Result */}
-            <div className="lg:col-span-6 border-[6px] border-zinc-900 bg-white p-8 relative shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] transform -rotate-1 mt-8">
-              <div className="absolute top-0 left-0 bg-zinc-900 text-white px-4 py-1 font-black uppercase tracking-widest text-[10px]">The Result</div>
-              <div className="flex items-center gap-8">
-                <div className="text-6xl">🚀</div>
-                <div>
-                  <h4 className="text-2xl font-black uppercase tracking-tighter mb-2">Efficiency Boost</h4>
-                  <p className="text-zinc-500 font-bold">Handover time reduced by 40%. Bug tracking became transparent.</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Panel 5: The Takeaway */}
-            <div className="lg:col-span-6 border-[6px] border-zinc-900 bg-zinc-900 p-8 relative shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] transform rotate-1 mt-8 text-white">
-              <div className="absolute top-0 left-0 bg-brand-primary text-white px-4 py-1 font-black uppercase tracking-widest text-[10px]">The Lesson</div>
-              <p className="text-xl font-bold italic leading-tight mt-4">
-                "Technical complexity is a design challenge. The goal isn't to hide it, but to make it navigable."
-              </p>
-            </div>
-
-          </div>
-        </section>
-
-        {/* Impact Stats */}
-        <section id="impact" className="scroll-mt-32">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 py-16 border-y-4 border-zinc-900">
-            {[
-              { val: "150", label: "languages" },
-              { val: "40%", label: "faster handover" },
-              { val: "10k+", label: "unique IDs" },
-              { val: "0", label: "lost tickets" },
-            ].map((stat) => (
-              <div key={stat.label} className="text-center">
-                <p className="text-5xl font-black text-brand-primary uppercase tracking-tighter mb-2">{stat.val}</p>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-zinc-400 leading-tight max-w-[120px] mx-auto">{stat.label}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-      </div>
-    )
+    content: <MercedesClarityContent />
   }
 };
 
@@ -1681,11 +1586,14 @@ export default function CaseStudyPage() {
               </button>
             </form>
 
-            <div className="mt-10 pt-8 border-t border-zinc-900 flex items-center justify-center gap-4 text-[10px] font-bold uppercase tracking-widest text-zinc-500">
-              <div className="flex items-center gap-2">
+            <div className="mt-8 pt-6 border-t border-zinc-900 flex flex-col items-center gap-1.5 text-center">
+              <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-zinc-500">
                 <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
                 <span>Clearance Level: Guest / Assessor</span>
               </div>
+              <p className="text-[11px] text-zinc-500 font-mono">
+                Reviewer passcode: <span className="text-brand-primary font-semibold">mercedes</span> or <span className="text-brand-primary font-semibold">1234</span>
+              </p>
             </div>
           </motion.div>
         </div>

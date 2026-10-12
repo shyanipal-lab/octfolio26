@@ -114,11 +114,11 @@ export default function Fun() {
                   setActiveGame("snake");
                   navigate("#fun-snake");
                 }}
-                className={`flex items-center gap-3.5 p-3.5 rounded-xl border transition-all text-left shadow-2xs active:translate-y-px outline-none focus-visible:ring-2 focus-visible:ring-ring ${
+                className={`flex items-center gap-3.5 p-3.5 rounded-xl border transition-[transform,background-color,border-color,box-shadow] duration-150 ease-out text-left shadow-2xs active:scale-[0.98] outline-none focus-visible:ring-2 focus-visible:ring-ring cursor-pointer ${
                   activeGame === "snake" ? "border-foreground/30 bg-muted/40 ring-1 ring-foreground/10" : "border-border/80 bg-card hover:border-foreground/20 hover:bg-muted/20"
                 }`}
               >
-                <div className={`w-9 h-9 rounded-lg flex items-center justify-center transition-colors ${
+                <div className={`w-9 h-9 rounded-lg flex items-center justify-center transition-colors duration-150 ${
                   activeGame === "snake" ? "bg-emerald-500/20 text-emerald-600 dark:text-emerald-400" : "bg-muted text-muted-foreground"
                 }`}>
                   <Ghost className="w-4 h-4" />
@@ -135,11 +135,11 @@ export default function Fun() {
                   setActiveGame("tetris");
                   navigate("#fun-tetris");
                 }}
-                className={`flex items-center gap-3.5 p-3.5 rounded-xl border transition-all text-left shadow-2xs active:translate-y-px outline-none focus-visible:ring-2 focus-visible:ring-ring ${
+                className={`flex items-center gap-3.5 p-3.5 rounded-xl border transition-[transform,background-color,border-color,box-shadow] duration-150 ease-out text-left shadow-2xs active:scale-[0.98] outline-none focus-visible:ring-2 focus-visible:ring-ring cursor-pointer ${
                   activeGame === "tetris" ? "border-foreground/30 bg-muted/40 ring-1 ring-foreground/10" : "border-border/80 bg-card hover:border-foreground/20 hover:bg-muted/20"
                 }`}
               >
-                <div className={`w-9 h-9 rounded-lg flex items-center justify-center transition-colors ${
+                <div className={`w-9 h-9 rounded-lg flex items-center justify-center transition-colors duration-150 ${
                   activeGame === "tetris" ? "bg-purple-500/20 text-purple-600 dark:text-purple-400" : "bg-muted text-muted-foreground"
                 }`}>
                   <LayoutGrid className="w-4 h-4" />
@@ -156,11 +156,11 @@ export default function Fun() {
                   setActiveGame("tictactoe");
                   navigate("#fun-tictactoe");
                 }}
-                className={`flex items-center gap-3.5 p-3.5 rounded-xl border transition-all text-left shadow-2xs active:translate-y-px outline-none focus-visible:ring-2 focus-visible:ring-ring ${
+                className={`flex items-center gap-3.5 p-3.5 rounded-xl border transition-[transform,background-color,border-color,box-shadow] duration-150 ease-out text-left shadow-2xs active:scale-[0.98] outline-none focus-visible:ring-2 focus-visible:ring-ring cursor-pointer ${
                   activeGame === "tictactoe" ? "border-foreground/30 bg-muted/40 ring-1 ring-foreground/10" : "border-border/80 bg-card hover:border-foreground/20 hover:bg-muted/20"
                 }`}
               >
-                <div className={`w-9 h-9 rounded-lg flex items-center justify-center transition-colors ${
+                <div className={`w-9 h-9 rounded-lg flex items-center justify-center transition-colors duration-150 ${
                   activeGame === "tictactoe" ? "bg-blue-500/20 text-blue-600 dark:text-blue-400" : "bg-muted text-muted-foreground"
                 }`}>
                   <LayoutGrid className="w-4 h-4" />
@@ -177,11 +177,11 @@ export default function Fun() {
                   setActiveGame("expense-tracker");
                   navigate("#fun-expense");
                 }}
-                className={`flex items-center gap-3.5 p-3.5 rounded-xl border transition-all text-left shadow-2xs active:translate-y-px outline-none focus-visible:ring-2 focus-visible:ring-ring ${
+                className={`flex items-center gap-3.5 p-3.5 rounded-xl border transition-[transform,background-color,border-color,box-shadow] duration-150 ease-out text-left shadow-2xs active:scale-[0.98] outline-none focus-visible:ring-2 focus-visible:ring-ring cursor-pointer ${
                   activeGame === "expense-tracker" ? "border-foreground/30 bg-muted/40 ring-1 ring-foreground/10" : "border-border/80 bg-card hover:border-foreground/20 hover:bg-muted/20"
                 }`}
               >
-                <div className={`w-9 h-9 rounded-lg flex items-center justify-center transition-colors ${
+                <div className={`w-9 h-9 rounded-lg flex items-center justify-center transition-colors duration-150 ${
                   activeGame === "expense-tracker" ? "bg-orange-500/20 text-orange-600 dark:text-orange-400" : "bg-muted text-muted-foreground"
                 }`}>
                   <Wallet className="w-4 h-4" />
@@ -209,10 +209,11 @@ export default function Fun() {
           </div>
 
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
+            initial={{ opacity: 0, scale: 0.96 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className={`relative w-full max-w-xl mx-auto transition-all duration-500 ${isGameFocused ? 'z-[100]' : 'z-10'}`}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.32, ease: [0.23, 1, 0.32, 1] }}
+            className={`relative w-full max-w-xl mx-auto transition-all duration-300 ${isGameFocused ? 'z-[100]' : 'z-10'}`}
           >
             {/* Focus Overlay Background */}
             <AnimatePresence>

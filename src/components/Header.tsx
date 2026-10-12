@@ -90,7 +90,7 @@ export default function Header() {
             <Link 
               key={item.label} 
               to={item.href}
-              className={`text-[10px] font-bold uppercase tracking-widest transition-all rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-4 ${
+              className={`text-[10px] font-bold uppercase tracking-widest transition-colors duration-150 rounded-sm active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-4 ${
                 isActive(item.href) ? "text-brand-primary font-accent lowercase" : "text-muted-foreground hover:text-foreground"
               }`}
             >
@@ -116,15 +116,16 @@ export default function Header() {
                   onMouseEnter={() => setHoveredSocial(item.label)}
                   onMouseLeave={() => setHoveredSocial(null)}
                   whileHover={{ y: -1 }}
+                  whileTap={{ scale: 0.96 }}
                   className="flex items-center gap-1.5 group rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-4"
                 >
-                  <div className="w-5 h-5 opacity-70 group-hover:opacity-100 transition-opacity">
+                  <div className="w-5 h-5 opacity-70 group-hover:opacity-100 transition-opacity duration-150">
                     <SocialLottie 
                       animationData={item.lottie} 
                       isHovered={hoveredSocial === item.label}
                     />
                   </div>
-                  <span className="text-[10px] font-mono font-bold text-muted-foreground group-hover:text-brand-primary group-hover:font-accent group-hover:lowercase transition-colors">
+                  <span className="text-[10px] font-mono font-bold text-muted-foreground group-hover:text-brand-primary group-hover:font-accent group-hover:lowercase transition-colors duration-150">
                     {item.label.toLowerCase()}.json
                   </span>
                 </Component>
@@ -136,17 +137,21 @@ export default function Header() {
         <div className="flex items-center gap-2 md:gap-4">
           <Link to="/#contact" className="hidden sm:block">
             <motion.button
-              initial={{ opacity: 0, scale: 0.8 }}
+              initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              whileHover={{ scale: 1.03 }}
+              whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.97 }}
-              className="bg-foreground text-background px-5 md:px-6 py-2 md:py-2.5 rounded-full text-[9px] md:text-[10px] font-bold uppercase tracking-widest hover:bg-brand-primary hover:text-white transition-all shadow-xs hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 active:translate-y-px"
+              transition={{ duration: 0.15, ease: [0.23, 1, 0.32, 1] }}
+              className="bg-foreground text-background px-5 md:px-6 py-2 md:py-2.5 rounded-full text-[9px] md:text-[10px] font-bold uppercase tracking-widest hover:bg-brand-primary hover:text-white transition-[background-color,color,box-shadow] duration-150 ease-out shadow-xs hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 cursor-pointer"
             >
               Let's Talk
             </motion.button>
           </Link>
           
-          <button className="md:hidden p-2 text-foreground hover:bg-muted rounded-full transition-colors" onClick={() => setIsOpen(!isOpen)}>
+          <button 
+            className="md:hidden p-2 text-foreground hover:bg-muted active:scale-[0.92] rounded-full transition-[transform,background-color] duration-150 ease-out" 
+            onClick={() => setIsOpen(!isOpen)}
+          >
             {isOpen ? <X className="w-5 h-5 md:w-6 md:h-6" /> : <Menu className="w-5 h-5 md:w-6 md:h-6" />}
           </button>
         </div>
@@ -156,9 +161,10 @@ export default function Header() {
       <AnimatePresence>
         {isOpen && (
           <motion.div 
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
+            initial={{ opacity: 0, y: -12, scale: 0.98 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -12, scale: 0.98 }}
+            transition={{ duration: 0.2, ease: [0.23, 1, 0.32, 1] }}
             className="md:hidden absolute top-24 left-6 right-6 bg-card border border-border rounded-2xl p-6 shadow-xl z-[110]"
           >
             <div className="flex flex-col gap-4">

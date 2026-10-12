@@ -57,10 +57,10 @@ export default function CreativeSection() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
               {CARDS.map((card, idx) => (
                 <div key={idx} className="relative group">
-                  <div className="relative overflow-hidden transition-all duration-300 transform bg-white border border-gray-100 shadow-sm group-hover:shadow-xl group-hover:-translate-y-1.5 rounded-2xl">
+                  <div className="relative overflow-hidden transition-[transform,box-shadow] duration-200 ease-out bg-white border border-gray-100 shadow-sm group-hover:shadow-lg group-hover:-translate-y-1 rounded-2xl">
                     <div className="flex shrink-0 aspect-[4/3] overflow-hidden">
                       <img 
-                        className="object-cover w-full h-full transition-all duration-300 transform group-hover:scale-105" 
+                        className="object-cover w-full h-full transition-transform duration-300 ease-out group-hover:scale-[1.03]" 
                         src={card.thumbnail} 
                         alt={card.alt} 
                         referrerPolicy="no-referrer"

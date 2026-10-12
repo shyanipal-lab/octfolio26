@@ -60,9 +60,9 @@ export default function Hero() {
             </div>
 
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
+              transition={{ delay: 0.15, duration: 0.35, ease: [0.23, 1, 0.32, 1] }}
               className="text-base md:text-xl text-zinc-500 max-w-2xl mx-auto mb-8 md:mb-12 leading-relaxed font-medium px-4 md:px-0"
             >
               <span className="font-accent text-brand-primary text-xl md:text-2xl lowercase">building connectivity</span> <span className="text-zinc-500 font-bold">@ Mercedes-Benz</span> <br className="hidden md:block" />
@@ -71,26 +71,27 @@ export default function Hero() {
             </motion.p>
 
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
+              transition={{ delay: 0.25, duration: 0.35, ease: [0.23, 1, 0.32, 1] }}
               className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8"
             >
               <Link to="/#work" className="w-full md:w-auto">
                 <motion.button
                   whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="w-full md:w-auto bg-foreground text-background px-9 py-4 rounded-full text-[10px] font-bold tracking-widest uppercase shadow-xs hover:bg-brand-primary hover:text-white transition-all active:translate-y-px flex items-center justify-center gap-3 outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                  whileTap={{ scale: 0.97 }}
+                  transition={{ duration: 0.15, ease: [0.23, 1, 0.32, 1] }}
+                  className="w-full md:w-auto bg-foreground text-background px-9 py-4 rounded-full text-[10px] font-bold tracking-widest uppercase shadow-xs hover:bg-brand-primary hover:text-white transition-[background-color,color,box-shadow] duration-150 ease-out flex items-center justify-center gap-3 outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 cursor-pointer"
                 >
                   Explore Work
                   <ArrowRight className="w-4 h-4" />
                 </motion.button>
               </Link>
               
-              <div className="flex items-center gap-3 p-1.5 pl-3 pr-5 bg-card border-0 rounded-full shadow-2xs hover:shadow-xs transition-all">
+              <div className="flex items-center gap-3 p-1.5 pl-3 pr-5 bg-card border-0 rounded-full shadow-2xs hover:shadow-xs transition-[transform,box-shadow] duration-150 ease-out active:scale-[0.98]">
                 <AnimatedTooltip items={GAME_ITEMS} />
                 <Link to="/#fun" className="group/games text-left ml-1 cursor-pointer">
-                  <p className="text-[10px] font-bold uppercase tracking-widest text-foreground group-hover/games:text-brand-primary transition-colors">Play Games</p>
+                  <p className="text-[10px] font-bold uppercase tracking-widest text-foreground group-hover/games:text-brand-primary transition-colors duration-150">Play Games</p>
                   <p className="text-[8px] font-medium text-muted-foreground uppercase tracking-widest">Beat the high score</p>
                 </Link>
               </div>

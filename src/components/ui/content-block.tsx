@@ -2,7 +2,8 @@
 import React, { useState, useEffect } from 'react'
 import { cn } from '@/lib/utils'
 import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group'
-import { Bold, Calendar1, Ellipsis, Italic, Strikethrough, Underline, Sparkles, Layers, ShieldCheck, Lock, Clock } from 'lucide-react'
+import { Bold, Calendar1, Ellipsis, Italic, Strikethrough, Underline, Sparkles, Layers, ShieldCheck, Lock, Clock, ArrowRight } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import { Button } from '@/components/ui/button'
 import VideoPlayer from '@/components/ui/video-player'
 import defaultVideo from '@/assets/videos/unique-id-manager.mp4'
@@ -83,27 +84,31 @@ export default function ContentSection() {
                             <span>150 languages | 200+ bug tickets</span>
                         </div>
 
-                        <h2 className="text-gray-900 dark:text-white text-2xl sm:text-3xl md:text-4xl lg:text-4.5xl font-bold leading-tight tracking-tight font-sans max-w-3xl mx-auto">
+                        <h2 className="text-gray-900 dark:text-white text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-bold leading-[1.2] tracking-tight font-sans max-w-3xl mx-auto">
                             <span className="block">
                                 “Design should welcome people into the design process, not lock them out of it”
                             </span>
-                            <span className="block mt-3 text-xs sm:text-sm font-sans font-medium text-zinc-500 tracking-normal normal-case not-italic">
+                            <span className="block mt-3 text-xs sm:text-sm font-medium text-zinc-500 tracking-normal normal-case not-italic">
                                 — by Ted Goas
                             </span>
                         </h2>
-                        <p className="text-zinc-600 dark:text-zinc-400 mt-4 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
+                        <p className="text-zinc-600 dark:text-zinc-400 mt-4 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed font-normal italic">
                             An internal tool used by engineers to generate unique IDs and localise a single text string into 150 languages — plagued by 200+ open bug tickets and no documentation. My job: fix the experience, ship clarity.
                         </p>
 
-                        {/* Coming Soon Feature CTA & Highlights */}
+                        {/* Case Study CTA & NDA Protection Status */}
                         <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-                            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-zinc-900 text-white text-xs sm:text-sm font-semibold shadow-md shadow-zinc-900/10 hover:bg-zinc-800 transition-colors">
-                                <Clock className="w-4 h-4 text-brand-primary" />
-                                <span>Case Study Coming Soon</span>
-                            </div>
-                            <div className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-white border border-zinc-200 text-zinc-600 text-xs font-medium">
-                                <Lock className="w-3.5 h-3.5 text-zinc-400" />
-                                <span>Clearance / NDA Protected</span>
+                            <Link
+                                to="/case-study/mercedes"
+                                className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-xl bg-zinc-900 text-white text-xs sm:text-sm font-semibold shadow-md shadow-zinc-900/10 hover:bg-zinc-800 transition-[transform,background-color,box-shadow] duration-150 ease-out active:scale-[0.97] cursor-pointer group"
+                            >
+                                <Lock className="w-4 h-4 text-amber-400 group-hover:scale-110 transition-transform" />
+                                <span>View Case Study (NDA Locked)</span>
+                                <ArrowRight className="w-3.5 h-3.5 text-zinc-400 group-hover:translate-x-0.5 group-hover:text-white transition-all" />
+                            </Link>
+                            <div className="inline-flex items-center gap-1.5 px-3 py-2.5 rounded-xl bg-white border border-zinc-200 text-zinc-600 text-xs font-medium">
+                                <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
+                                <span>Clearance Passcode Required</span>
                             </div>
                         </div>
                     </div>
@@ -130,8 +135,8 @@ export default function ContentSection() {
                                 <Layers className="w-4 h-4" />
                             </div>
                             <div>
-                                <h4 className="text-xs font-bold text-gray-900 font-sans">Automated UID Indexing</h4>
-                                <p className="text-[11px] text-zinc-500 mt-1 leading-normal">
+                                <h4 className="text-sm font-semibold text-zinc-900 font-sans">Automated UID Indexing</h4>
+                                <p className="text-xs text-zinc-500 mt-1 leading-relaxed">
                                     Instant tokenization & ticket linking across thousands of in-vehicle controls.
                                 </p>
                             </div>
@@ -142,8 +147,8 @@ export default function ContentSection() {
                                 <ShieldCheck className="w-4 h-4" />
                             </div>
                             <div>
-                                <h4 className="text-xs font-bold text-gray-900 font-sans">Safety & Distraction Checks</h4>
-                                <p className="text-[11px] text-zinc-500 mt-1 leading-normal">
+                                <h4 className="text-sm font-semibold text-zinc-900 font-sans">Safety & Distraction Checks</h4>
+                                <p className="text-xs text-zinc-500 mt-1 leading-relaxed">
                                     Built-in driver distraction rules and automotive compliance gates prior to merge.
                                 </p>
                             </div>
@@ -154,8 +159,8 @@ export default function ContentSection() {
                                 <Clock className="w-4 h-4" />
                             </div>
                             <div>
-                                <h4 className="text-xs font-bold text-gray-900 font-sans">Global Translation Grid</h4>
-                                <p className="text-[11px] text-zinc-500 mt-1 leading-normal">
+                                <h4 className="text-sm font-semibold text-zinc-900 font-sans">Global Translation Grid</h4>
+                                <p className="text-xs text-zinc-500 mt-1 leading-relaxed">
                                     Real-time text length computation and RTL glyph adjustments for 150+ locales.
                                 </p>
                             </div>

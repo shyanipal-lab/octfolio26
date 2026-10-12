@@ -7,28 +7,28 @@ import { ArrowRightIcon } from "@radix-ui/react-icons";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
 
-// Animation variants for the container to stagger children
+// Animation variants for the container to stagger children with tight 50ms stagger
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.1,
-      delayChildren: 0.1,
+      staggerChildren: 0.05,
+      delayChildren: 0.04,
     },
   },
 };
 
-// Animation variants for each grid item
+// Animation variants for each grid item using Emil Kowalski custom ease-out and subtle scale(0.98)
 const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: { opacity: 0, y: 14, scale: 0.98 },
   visible: {
     opacity: 1,
     y: 0,
+    scale: 1,
     transition: {
-      type: "spring",
-      stiffness: 100,
-      damping: 10,
+      duration: 0.32,
+      ease: [0.23, 1, 0.32, 1],
     },
   },
 };
@@ -71,7 +71,8 @@ export const BentoGridShowcase = ({
     <motion.section
       variants={containerVariants}
       initial="hidden"
-      animate="visible"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-50px" }}
       className={cn(
         // Core grid layout: 1 col on mobile, 3 on desktop
         "grid w-full grid-cols-1 gap-6 md:grid-cols-3",

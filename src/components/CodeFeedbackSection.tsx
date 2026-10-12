@@ -93,7 +93,7 @@ export default function CodeFeedbackSection() {
                 id="hoshaksham-brand-logo"
                 to="/case-study/hoshaksham"
                 title="Hoshaksham Case Study"
-                className="flex items-center gap-3 rounded-xl outline-none focus:ring-1 focus:ring-gray-900 focus:ring-offset-2 group"
+                className="flex items-center gap-3 rounded-xl outline-none focus:ring-1 focus:ring-gray-900 focus:ring-offset-2 group active:scale-[0.98] transition-transform duration-150 ease-out"
               >
                 <div className="w-9 h-9 rounded-xl bg-zinc-900 text-white flex items-center justify-center font-bold text-lg shadow-sm group-hover:bg-emerald-600 transition-colors">
                   H
@@ -122,12 +122,12 @@ export default function CodeFeedbackSection() {
                   <span>100+ downloads in 3 Months · Lead founding designer</span>
                 </div>
 
-                <h1 className="text-3xl font-bold text-gray-900 sm:text-4xl lg:text-5xl font-pj tracking-tight leading-tight">
+                <h1 className="text-3xl sm:text-4xl lg:text-[44px] font-bold text-gray-900 font-pj tracking-tight leading-[1.15]">
                   Building a Subscription Tracker from Zero (Mobile App)
                 </h1>
 
-                <p className="mt-4 text-base sm:text-lg text-gray-600 font-pj leading-relaxed">
-                  A subscription and payment-tracking app built entirely from scratch, IA, onboarding, Flutter flow token Design system
+                <p className="mt-4 text-base sm:text-lg text-gray-600 font-pj leading-relaxed font-normal max-w-lg">
+                  A subscription and payment-tracking app built from scratch: information architecture, multi-role onboarding, and token-driven design system.
                 </p>
               </div>
 
@@ -139,26 +139,26 @@ export default function CodeFeedbackSection() {
                   target="_blank"
                   rel="noopener noreferrer"
                   title="Case study"
-                  className="inline-flex items-center justify-center px-7 py-3.5 text-base sm:text-lg font-bold text-white transition-all duration-200 bg-gray-900 border border-transparent rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 font-pj hover:bg-emerald-600 shadow-md group"
+                  className="inline-flex items-center justify-center px-6 py-3 text-sm font-semibold text-white transition-[transform,background-color,box-shadow] duration-150 ease-out bg-gray-900 border border-transparent rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 font-pj hover:bg-emerald-600 shadow-md hover:shadow-lg active:scale-[0.97] group cursor-pointer"
                 >
-                  <span>Case study</span>
-                  <ArrowUpRight className="w-5 h-5 ml-2 text-white/80 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                  <span>Read case study</span>
+                  <ArrowUpRight className="w-4 h-4 ml-2 text-white/80 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-150" />
                 </a>
               </div>
 
               {/* Key Impact Stats Bar */}
               <div className="mt-8 pt-6 border-t border-gray-200/80 grid grid-cols-3 gap-4 text-center lg:text-left">
                 <div>
-                  <p className="text-xl sm:text-2xl font-black text-gray-900 font-pj">100+</p>
-                  <p className="text-[11px] text-gray-500 font-semibold uppercase tracking-wider">Downloads in 3 Mos</p>
+                  <p className="text-2xl sm:text-3xl font-bold text-gray-900 font-pj tracking-tight">100+</p>
+                  <p className="text-xs text-gray-500 font-medium mt-0.5">Downloads in 3 mos</p>
                 </div>
                 <div>
-                  <p className="text-xl sm:text-2xl font-black text-emerald-600 font-pj">Lead</p>
-                  <p className="text-[11px] text-gray-500 font-semibold uppercase tracking-wider">Founding Designer</p>
+                  <p className="text-2xl sm:text-3xl font-bold text-emerald-600 font-pj tracking-tight">Lead</p>
+                  <p className="text-xs text-gray-500 font-medium mt-0.5">Founding designer</p>
                 </div>
                 <div>
-                  <p className="text-xl sm:text-2xl font-black text-gray-900 font-pj">0</p>
-                  <p className="text-[11px] text-gray-500 font-semibold uppercase tracking-wider">Spreadsheets</p>
+                  <p className="text-2xl sm:text-3xl font-bold text-gray-900 font-pj tracking-tight">0</p>
+                  <p className="text-xs text-gray-500 font-medium mt-0.5">Spreadsheets needed</p>
                 </div>
               </div>
             </div>
@@ -198,7 +198,7 @@ export default function CodeFeedbackSection() {
                           <button
                             type="button"
                             onClick={() => fileInputRef.current?.click()}
-                            className="inline-flex items-center gap-1 text-xs font-semibold text-gray-700 hover:text-emerald-600 transition-colors"
+                            className="inline-flex items-center gap-1 text-xs font-semibold text-gray-700 hover:text-emerald-600 active:scale-[0.94] transition-[transform,color] duration-150 ease-out"
                             title="Replace image"
                           >
                             <RefreshCw className="w-3.5 h-3.5" />
@@ -210,7 +210,7 @@ export default function CodeFeedbackSection() {
                               <button
                                 type="button"
                                 onClick={handleClearImage}
-                                className="inline-flex items-center gap-1 text-xs font-semibold text-red-600 hover:text-red-700 transition-colors"
+                                className="inline-flex items-center gap-1 text-xs font-semibold text-red-600 hover:text-red-700 active:scale-[0.94] transition-[transform,color] duration-150 ease-out"
                                 title="Reset to default cover"
                               >
                                 <X className="w-3.5 h-3.5" />

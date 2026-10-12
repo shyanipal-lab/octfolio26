@@ -117,22 +117,22 @@ export default function Work() {
     <section id="work" className="py-32 bg-white scroll-mt-32">
       <div className="container mx-auto px-6">
         {/* Header */}
-        <div className="max-w-4xl mb-32">
+        <div className="max-w-4xl mb-20 md:mb-28">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.35, ease: [0.23, 1, 0.32, 1] }}
           >
-            <div className="flex items-center gap-3 mb-8">
-              <div className="w-12 h-[1px] bg-brand-primary" />
-              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-brand-primary">Selected Works</span>
+            <div className="inline-flex items-center gap-2 mb-4 px-3 py-1 rounded-full bg-brand-primary/10 border border-brand-primary/20 text-brand-primary text-xs font-semibold">
+              <span className="w-1.5 h-1.5 rounded-full bg-brand-primary" />
+              <span>Selected Work</span>
             </div>
-            <h2 className="font-header text-6xl md:text-8xl font-black uppercase tracking-tighter mb-10 leading-[0.85]">
-              Design stories that <br />
-              <span className="text-brand-primary font-accent lowercase">moved the needle</span>.
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-zinc-900 tracking-tight mb-5 leading-[1.1] font-sans">
+              Case studies in craft, systems & measurable impact
             </h2>
-            <p className="text-2xl text-zinc-500 leading-relaxed font-medium max-w-2xl">
-              Every case study is a business problem first. From messy discovery to critical decisions and measurable outcomes.
+            <p className="text-base sm:text-lg text-zinc-600 leading-relaxed font-normal max-w-2xl">
+              Every project begins with a real business problem. From discovery and system architecture to high-stakes production execution.
             </p>
           </motion.div>
         </div>
@@ -232,33 +232,37 @@ export default function Work() {
 
               {/* Info Side */}
               <div className={`lg:col-span-5 ${i % 2 !== 0 ? "lg:order-1" : ""}`}>
-                <div className="space-y-6 md:space-y-8">
-                  <div className="flex items-center gap-2.5">
-                    <Badge variant="outline" className="font-mono text-brand-primary border-brand-primary/25 bg-brand-primary/5 text-xs py-0.5 px-2.5 rounded-full">
+                <div className="space-y-5 md:space-y-6">
+                  <div className="flex items-center gap-2">
+                    <span className="font-mono text-brand-primary text-xs font-semibold bg-brand-primary/10 border border-brand-primary/20 py-0.5 px-2 rounded-md">
                       {project.year}
-                    </Badge>
-                    <Badge variant="secondary" className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground bg-muted border border-border/60 rounded-full px-2.5 py-0.5">
+                    </span>
+                    <span className="text-xs font-medium text-zinc-600 bg-zinc-100 border border-zinc-200/80 px-2.5 py-0.5 rounded-md">
                       {project.category}
-                    </Badge>
+                    </span>
                   </div>
 
-                  <h3 className="text-3xl md:text-5xl font-header font-black uppercase tracking-tighter leading-[0.9]">
-                    {project.title.split(' — ')[0]} — <br />
-                    <span className="text-brand-primary font-accent lowercase">{project.title.split(' — ')[1]}</span>
-                  </h3>
+                  <div>
+                    <span className="text-xs font-mono font-semibold uppercase tracking-wider text-brand-primary block mb-1">
+                      {project.title.split(' — ')[0]}
+                    </span>
+                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-zinc-900 tracking-tight leading-snug">
+                      {project.title.split(' — ')[1]}
+                    </h3>
+                  </div>
 
-                  <p className="text-base md:text-lg text-zinc-500 leading-relaxed font-medium">
+                  <p className="text-sm sm:text-base text-zinc-600 leading-relaxed font-normal max-w-xl">
                     {project.subtitle}
                   </p>
 
-                  <div className="grid grid-cols-2 gap-4 md:gap-6 p-4 md:p-5 rounded-2xl bg-card border border-border/80 shadow-2xs">
+                  <div className="grid grid-cols-2 gap-4 p-4 rounded-xl bg-zinc-50 border border-zinc-200/80">
                     <div>
-                      <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground mb-1">Role</p>
-                      <p className="text-xs md:text-sm font-bold text-foreground">{project.role}</p>
+                      <span className="text-xs text-zinc-500 font-medium block mb-0.5">Role</span>
+                      <span className="text-xs sm:text-sm font-semibold text-zinc-900 block">{project.role}</span>
                     </div>
                     <div>
-                      <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground mb-1">Impact</p>
-                      <p className="text-xs md:text-sm font-bold text-brand-primary">{project.impact}</p>
+                      <span className="text-xs text-zinc-500 font-medium block mb-0.5">Measurable Impact</span>
+                      <span className="text-xs sm:text-sm font-bold text-brand-primary block">{project.impact}</span>
                     </div>
                   </div>
 
@@ -268,15 +272,15 @@ export default function Work() {
                         href={project.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="group w-full md:w-auto inline-flex items-center justify-center gap-3.5 bg-foreground text-background px-7 py-3.5 rounded-full font-bold uppercase tracking-widest text-xs hover:bg-brand-primary hover:text-white transition-all shadow-xs hover:shadow-sm active:translate-y-px outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                        className="group w-full md:w-auto inline-flex items-center justify-center gap-2.5 bg-zinc-900 text-white px-6 py-3 rounded-full text-xs sm:text-sm font-semibold hover:bg-brand-primary transition-[transform,background-color,color,box-shadow] duration-150 ease-out shadow-xs hover:shadow-sm active:scale-[0.97] outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 cursor-pointer"
                       >
                         <span>View Case Study</span>
-                        <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                        <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-150" />
                       </a>
                     ) : (
                       <Link 
                         to={project.link}
-                        className="group w-full md:w-auto inline-flex items-center justify-center gap-3.5 bg-foreground text-background px-7 py-3.5 rounded-full font-bold uppercase tracking-widest text-xs hover:bg-brand-primary hover:text-white transition-all shadow-xs hover:shadow-sm active:translate-y-px outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                        className="group w-full md:w-auto inline-flex items-center justify-center gap-2.5 bg-zinc-900 text-white px-6 py-3 rounded-full text-xs sm:text-sm font-semibold hover:bg-brand-primary transition-[transform,background-color,color,box-shadow] duration-150 ease-out shadow-xs hover:shadow-sm active:scale-[0.97] outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 cursor-pointer"
                       >
                         {project.id === "mercedes" && (
                           <Lock className="w-3.5 h-3.5 text-zinc-400 group-hover:text-white transition-colors" />
