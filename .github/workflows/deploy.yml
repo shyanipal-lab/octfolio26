@@ -28,6 +28,8 @@ jobs:
 
       - name: Build
         run: npm run build
+        env:
+          BASE_PATH: '/octfolio26/'
 
       - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v3
