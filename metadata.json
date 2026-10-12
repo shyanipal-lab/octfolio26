@@ -1,0 +1,8 @@
+{
+  "name": "Remix Shyani Portfolio 2026 sept",
+  "description": "A top-tier product design portfolio inspired by MetaMask and Miro, featuring interactive playground and a snake game.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

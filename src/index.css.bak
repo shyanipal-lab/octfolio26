@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&family=Anton&family=Archivo+Black&family=Playwrite+IE:wght@100..400&family=Trispace:wght@100..800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'Acorn';
+  src: url('./assets/fonts/acorn/Acorn-Thin.otf') format('opentype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Acorn';
+  src: url('./assets/fonts/acorn/Acorn-ExtraLight.otf') format('opentype');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Acorn';
+  src: url('./assets/fonts/acorn/Acorn-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Acorn';
+  src: url('./assets/fonts/acorn/Acorn-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Acorn';
+  src: url('./assets/fonts/acorn/Acorn-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Acorn';
+  src: url('./assets/fonts/acorn/Acorn-SemiBold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Acorn';
+  src: url('./assets/fonts/acorn/Acorn-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Acorn';
+  src: url('./assets/fonts/acorn/Acorn-Bold.otf') format('opentype');
+  font-weight: 800 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Roobert Font Family (from befonts.com/roobert-font-family.html) */
+@font-face {
+  font-family: 'Roobert';
+  src: url('./assets/fonts/roobert/Roobert-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roobert';
+  src: url('./assets/fonts/roobert/Roobert-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roobert';
+  src: url('./assets/fonts/roobert/Roobert-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roobert';
+  src: url('./assets/fonts/roobert/Roobert-SemiBold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roobert';
+  src: url('./assets/fonts/roobert/Roobert-Bold.otf') format('opentype');
+  font-weight: 700 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --font-sans: "Acorn", "Roobert", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Acorn", "Space Grotesk", sans-serif;
+  --font-header: "Acorn", "Space Grotesk", "Archivo Black", "Anton", sans-serif;
+  --font-accent: "Playwrite IE", cursive;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-pj: "Roobert", "Plus Jakarta Sans", sans-serif;
+  --font-roobert: "Roobert", "Inter", sans-serif;
+  
+  --color-brand-primary: #037DD6; /* MetaMask blue */
+  --color-brand-secondary: #F6851B; /* MetaMask orange */
+  --color-miro-yellow: #FFD02F;
+  --color-miro-blue: #0500FF;
+
+  @keyframes border-beam {
+    100% {
+      offset-distance: 100%;
+    }
+  }
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+}
+
+.animate-marquee {
+  animation: marquee var(--duration, 30s) linear infinite;
+}
+
+.animate-border-beam {
+  animation: border-beam var(--duration) infinite linear;
+  animation-delay: var(--delay);
+}
+
+@layer base {
+  html, body {
+    @apply bg-white text-zinc-900 selection:bg-brand-primary/20;
+    font-family: "Acorn", "Inter", sans-serif;
+  }
+  
+  /* Headings maintain Acorn font */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Acorn", "Space Grotesk", sans-serif;
+  }
+
+  /* Paragraphs use Roobert Font Family */
+  p, .font-roobert, [data-paragraph] {
+    font-family: "Roobert", "Inter", sans-serif !important;
+  }
+
+  /* Preserve accent, mono, or display elements inside paragraphs */
+  p .font-accent, p.font-accent {
+    font-family: "Playwrite IE", cursive !important;
+  }
+  
+  p .font-mono, p.font-mono {
+    font-family: "JetBrains Mono", monospace !important;
+  }
+
+  p .font-header, p.font-header, p .font-display, p.font-display {
+    font-family: "Acorn", "Space Grotesk", sans-serif !important;
+  }
+  
+  /* Keep the font in blue as it is (Trispace), while updating black and grey text */
+  .text-brand-primary:not(.font-accent) {
+    font-family: "Trispace", sans-serif !important;
+  }
+}
+
+.glass {
+  @apply bg-white/70 backdrop-blur-xl border border-white/20;
+}
+
+.miro-grid {
+  background-image: radial-gradient(circle, #e5e7eb 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
