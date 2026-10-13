@@ -60,7 +60,7 @@ const CASE_STUDIES = [
     category: "Fintech • SaaS • 0 → 1",
     role: "Founding Lead Designer",
     impact: "0 spreadsheets & 98% faster admin",
-    link: "https://spfolio.framer.ai/hosaksham-case-study",
+    link: "/case-study/hoshaksham",
     featured: false,
     component: <HoshakshamApp />,
     type: "web",

@@ -27,6 +27,15 @@ import {
   Car,
   TrendingUp,
   Award,
+  Linkedin,
+  Mail,
+  Github,
+  Dribbble,
+  Twitter,
+  ArrowUpRight,
+  Copy,
+  Check,
+  Share2,
 } from "lucide-react";
 
 import creatorPortraitImg from "@/assets/images/regenerated_image_1788380574184.jpg";
@@ -43,6 +52,17 @@ export default function About() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
   const [progress, setProgress] = useState(0);
+
+  // Socials copy email state
+  const [copiedEmail, setCopiedEmail] = useState(false);
+
+  const handleCopyEmail = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    navigator.clipboard.writeText("shyanipal06@gmail.com");
+    setCopiedEmail(true);
+    setTimeout(() => setCopiedEmail(false), 2000);
+  };
 
   const togglePlay = (e?: React.MouseEvent) => {
     e?.stopPropagation();

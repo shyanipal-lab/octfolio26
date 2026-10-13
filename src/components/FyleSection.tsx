@@ -61,16 +61,14 @@ export default function FyleSection() {
 
             {/* Action CTAs */}
             <div className="mt-8 flex items-center justify-center">
-              <a
+              <Link
                 id="fyle-case-study-cta"
-                href="https://spfolio.framer.ai/zz-case-study-bulk-mileage"
-                target="_blank"
-                rel="noopener noreferrer"
+                to="/case-study/fyle"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-zinc-900 text-white text-xs sm:text-sm font-semibold shadow-md shadow-zinc-900/10 hover:bg-zinc-800 hover:shadow-lg transition-[transform,background-color,box-shadow] duration-150 ease-out active:scale-[0.97] group cursor-pointer"
               >
                 <span>Read case study</span>
                 <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-150" />
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -117,15 +115,13 @@ export default function FyleSection() {
                 </button>
               </div>
 
-              <a
-                href="https://spfolio.framer.ai/zz-case-study-bulk-mileage"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                to="/case-study/fyle"
                 className="text-[11px] font-semibold text-zinc-600 hover:text-zinc-900 flex items-center gap-1 hover:underline shrink-0"
               >
                 <span>Case study</span>
                 <ExternalLink className="w-3 h-3" />
-              </a>
+              </Link>
             </div>
 
             {/* Sandbox Container */}

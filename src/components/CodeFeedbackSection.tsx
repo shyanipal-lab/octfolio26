@@ -133,17 +133,15 @@ export default function CodeFeedbackSection() {
 
               {/* Action Buttons */}
               <div className="mt-8 sm:flex sm:items-center sm:justify-center lg:justify-start lg:mt-10">
-                <a
+                <Link
                   id="hero-btn-case-study"
-                  href="https://spfolio.framer.ai/hosaksham-case-study"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  to="/case-study/hoshaksham"
                   title="Case study"
                   className="inline-flex items-center justify-center px-6 py-3 text-sm font-semibold text-white transition-[transform,background-color,box-shadow] duration-150 ease-out bg-gray-900 border border-transparent rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 font-pj hover:bg-emerald-600 shadow-md hover:shadow-lg active:scale-[0.97] group cursor-pointer"
                 >
                   <span>Read case study</span>
                   <ArrowUpRight className="w-4 h-4 ml-2 text-white/80 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-150" />
-                </a>
+                </Link>
               </div>
 
               {/* Key Impact Stats Bar */}

@@ -167,7 +167,6 @@ const CASE_STUDIES: Record<string, CaseStudy> = {
     category: "SaaS · Service Management · 0 → 1",
     duration: "3 Months",
     year: "2024",
-    externalLink: "https://spfolio.framer.ai/hosaksham-case-study",
     heroComponent: (
       <div className="w-full h-full bg-zinc-50 flex items-center justify-center p-8 overflow-hidden">
         <div className="w-full max-w-4xl aspect-video bg-white rounded-[48px] shadow-2xl border border-zinc-100 overflow-hidden relative">
@@ -1225,16 +1224,26 @@ const CASE_STUDIES: Record<string, CaseStudy> = {
 
         {/* Final CTA */}
         <section className="text-center py-20 border-t border-zinc-100">
-          <h4 className="text-2xl font-black uppercase tracking-tighter mb-8">Want the boring version?</h4>
-          <a 
-            href="https://heyshyani.design/fyle-case-study.html" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 px-10 py-5 bg-zinc-900 text-white rounded-none font-black uppercase tracking-widest hover:bg-[#1a6b4a] transition-all shadow-[8px_8px_0px_0px_rgba(242,125,38,1)] active:translate-x-1 active:translate-y-1 active:shadow-none group"
-          >
-            Read Full Case Study
-            <ArrowUpRight className="w-6 h-6 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-          </a>
+          <h4 className="text-2xl font-black uppercase tracking-tighter mb-3">Explore More Case Studies</h4>
+          <p className="text-sm text-zinc-500 mb-8 max-w-md mx-auto">
+            Discover how we built self-serve UID tooling at Mercedes-Benz or automated subscriptions at Hoshaksham.
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <Link 
+              to="/case-study/mercedes" 
+              className="inline-flex items-center gap-2.5 px-8 py-4 bg-zinc-900 text-white font-bold uppercase tracking-widest hover:bg-brand-primary transition-all shadow-[6px_6px_0px_0px_rgba(242,125,38,1)] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none group"
+            >
+              Mercedes-Benz Case Study
+              <ArrowUpRight className="w-5 h-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            </Link>
+            <Link 
+              to="/case-study/hoshaksham" 
+              className="inline-flex items-center gap-2.5 px-8 py-4 bg-white text-zinc-900 border border-zinc-300 font-bold uppercase tracking-widest hover:bg-zinc-50 transition-all shadow-xs"
+            >
+              Hoshaksham Case Study
+              <ArrowUpRight className="w-5 h-5" />
+            </Link>
+          </div>
         </section>
       </div>
     )

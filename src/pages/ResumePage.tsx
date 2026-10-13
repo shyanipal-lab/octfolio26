@@ -20,6 +20,7 @@ const RESUME_DATA = {
       company: "Mercedes-Benz R&D, Bangalore",
       role: "UX Designer (Contract)",
       period: "Mar 2025 – Present",
+      caseStudyLink: "/case-study/mercedes",
       points: [
         "Designing user experiences that improve mobile-vehicle integration through Android Auto and Apple CarPlay.",
         "Collaborating with cross-functional teams across product, engineering, and global design teams to deliver production-ready UX solutions.",
@@ -31,7 +32,7 @@ const RESUME_DATA = {
       company: "HoShaksham, Remote",
       role: "Product designer (UI/UX)",
       period: "June 2024 - Aug 2024",
-      caseStudyLink: "https://spfolio.framer.ai/hosaksham-case-study",
+      caseStudyLink: "/case-study/hoshaksham",
       points: [
         "Designed mobile and web apps enabling service providers to manage offerings, subscribers, and workflows.",
         "Owned the full design lifecycle from discovery to launch.",
@@ -53,7 +54,7 @@ const RESUME_DATA = {
       company: "Fyle, Bengaluru",
       role: "Product designer",
       period: "August 2019 - November 2020",
-      caseStudyLink: "https://heyshyani.design/fyle-case-study.html",
+      caseStudyLink: "/case-study/fyle",
       points: [
         "Designed features that enabled employees to claim over £395+ monthly reimbursements efficiently.",
         "Built and improved components within the design system, improving cross-platform consistency.",
@@ -210,15 +211,25 @@ export default function ResumePage() {
                         {exp.company}
                       </h3>
                       {exp.caseStudyLink && (
-                        <a
-                          href={exp.caseStudyLink}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-primary/10 hover:bg-brand-primary text-brand-primary hover:text-white border border-brand-primary/20 text-[10px] font-bold uppercase tracking-widest transition-all group"
-                        >
-                          <span>Case Study</span>
-                          <ArrowUpRight className="w-3 h-3 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                        </a>
+                        exp.caseStudyLink.startsWith("/") ? (
+                          <Link
+                            to={exp.caseStudyLink}
+                            className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-primary/10 hover:bg-brand-primary text-brand-primary hover:text-white border border-brand-primary/20 text-[10px] font-bold uppercase tracking-widest transition-all group"
+                          >
+                            <span>Case Study</span>
+                            <ArrowUpRight className="w-3 h-3 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                          </Link>
+                        ) : (
+                          <a
+                            href={exp.caseStudyLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-primary/10 hover:bg-brand-primary text-brand-primary hover:text-white border border-brand-primary/20 text-[10px] font-bold uppercase tracking-widest transition-all group"
+                          >
+                            <span>Case Study</span>
+                            <ArrowUpRight className="w-3 h-3 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                          </a>
+                        )
                       )}
                     </div>
                     <span className="text-[10px] font-bold uppercase tracking-widest text-zinc-400 bg-zinc-50 px-3 py-1 rounded-full">

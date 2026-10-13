@@ -1,4 +1,5 @@
 import React, { useState, useRef } from "react";
+import { Link } from "react-router-dom";
 import { motion } from "motion/react";
 import { 
   ArrowUpRight,
@@ -52,15 +53,13 @@ export default function HoshakshamApp() {
 
         {/* Actions & View Toggle */}
         <div className="flex items-center gap-2 shrink-0 self-start sm:self-auto flex-wrap">
-          <a
-            href="https://spfolio.framer.ai/hosaksham-case-study"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            to="/case-study/hoshaksham"
             className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold bg-brand-primary/10 hover:bg-brand-primary text-brand-primary hover:text-white border border-brand-primary/20 transition-all shadow-sm group"
           >
             <span>Case Study</span>
             <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-          </a>
+          </Link>
 
           <div className="flex items-center bg-zinc-200/80 p-1 rounded-2xl">
             <button
